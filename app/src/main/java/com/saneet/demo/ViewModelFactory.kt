@@ -9,7 +9,7 @@ import javax.inject.Inject
 /**
  * A Factory class that reduces the boilerplate to initialize the ViewModel within the Activity or a Fragment.
  */
-class ViewModelFactory<T: ViewModel>
+class ViewModelFactory<T : ViewModel>
 @Inject constructor(private val viewModel: Lazy<T>) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
@@ -18,7 +18,7 @@ class ViewModelFactory<T: ViewModel>
     /**
      * Returns an instance of a defined ViewModel class.
      */
-    inline fun <reified R: T> get(viewModelStoreOwner: ViewModelStoreOwner): T {
+    inline fun <reified R : T> get(viewModelStoreOwner: ViewModelStoreOwner): T {
         return ViewModelProvider(viewModelStoreOwner, this)[R::class.java]
     }
 }
