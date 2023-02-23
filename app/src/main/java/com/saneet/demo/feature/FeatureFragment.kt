@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.saneet.demo.DemoApplication
 import com.saneet.demo.R
 import com.saneet.demo.ViewModelFactory
 import javax.inject.Inject
+import androidx.fragment.app.Fragment
 
 class FeatureFragment : Fragment() {
 

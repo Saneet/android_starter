@@ -16,6 +16,15 @@
         android:theme="@style/Theme.SaneetDemo"
         tools:targetApi="31">
         <activity
+            android:name=".ModuleEmbedActivity"
+            android:exported="false"
+            android:label="@string/title_activity_module_embed"
+            android:theme="@style/Theme.SaneetDemo.NoActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
