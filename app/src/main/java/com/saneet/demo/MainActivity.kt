@@ -17,6 +17,7 @@ import com.google.android.play.core.splitinstall.SplitInstallRequest
 import com.google.android.play.core.splitinstall.SplitInstallSessionState
 import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
+import com.jakewharton.byteunits.BinaryByteUnit
 
 class MainActivity : Activity() {
     override fun attachBaseContext(newBase: Context) {
@@ -92,6 +93,8 @@ class MainActivity : Activity() {
     private lateinit var progress: Group
     private lateinit var progressBar: ProgressBar
     private lateinit var progressText: TextView
+    private lateinit var progressSize: TextView
+    private lateinit var totalSize: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -167,6 +170,8 @@ class MainActivity : Activity() {
 
         progressBar.max = state.totalBytesToDownload().toInt()
         progressBar.progress = state.bytesDownloaded().toInt()
+        progressSize.text = BinaryByteUnit.BYTES.toMebibytes(state.bytesDownloaded()).toString()
+        totalSize.text = BinaryByteUnit.BYTES.toMebibytes(state.totalBytesToDownload()).toString()
 
         updateProgressMessage(message)
     }
@@ -176,6 +181,8 @@ class MainActivity : Activity() {
         progress = findViewById(R.id.progress)
         progressBar = findViewById(R.id.progress_bar)
         progressText = findViewById(R.id.progress_text)
+        progressSize = findViewById(R.id.download_progress)
+        totalSize = findViewById(R.id.download_size)
         setupClickListener()
     }
 

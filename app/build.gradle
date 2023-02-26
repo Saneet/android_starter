@@ -12,8 +12,8 @@ android {
         applicationId "com.saneet.demo"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "4.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -46,6 +46,7 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:4.9.3"
     implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.3"
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.3"
+    implementation 'com.jakewharton.byteunits:byteunits:0.9.1'
 
     // RxJava
     implementation "io.reactivex.rxjava2:rxjava:2.2.21"
